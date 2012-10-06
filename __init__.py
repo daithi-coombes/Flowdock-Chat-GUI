@@ -5,6 +5,10 @@ import flowdockClient
 import settings
 
 def stream_stdout( stream):
+    """
+    Acts as callback for messages from stream.
+    Routes messages from pycurl stream to the UI
+    """
     ui.update_textBrowser( stream )
     
 
