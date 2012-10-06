@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project Flowdock Client -->
+<!-- Saved: 2012-10-05, 21:34:32 -->
+<!-- Copyright (C) 2012 Daithi Coombes, webeire@gmail.com -->
+<Project version="4.6">
+  <Language>en</Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>Qt4</ProjectType>
+  <Description>A chat client for flowdock flows</Description>
+  <Version>0.1</Version>
+  <Author>Daithi Coombes</Author>
+  <Email>webeire@gmail.com</Email>
+  <Sources>
+    <Source>__init__.py</Source>
+    <Source>ui/__init__.py</Source>
+    <Source>ui/Ui_mainwindow.py</Source>
+    <Source>ui/mainwindow.py</Source>
+    <Source>flowdockClient/__init__.py</Source>
+    <Source>flowdock_twisted/__init__.py</Source>
+    <Source>flowdock_requests/__init__.py</Source>
+    <Source>settings.py</Source>
+  </Sources>
+  <Forms>
+    <Form>ui/mainwindow.ui</Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>
