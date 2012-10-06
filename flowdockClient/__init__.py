@@ -1,6 +1,6 @@
 import pycurl, json, thread
 from StringIO import StringIO
-
+from time import gmtime, strftime
 
 class flowdock_py:
     
@@ -12,6 +12,7 @@ class flowdock_py:
     URL_STREAM = "https://stream.flowdock.com/flows/?filter=web-eire/main"
     URL_USERS = "https://api.flowdock.com/flows/web-eire/main/users"
     USER = "webeire@gmail.com"
+    USERS = {}
     USER_NAME = "Daithi"
     PASS = "chanman77"
     
@@ -46,7 +47,7 @@ class flowdock_py:
         @param method stream_callback A method to pass the stream stdOut to
         """
         if(self.DEBUG):
-            print "flowdockClient: steam() method called"
+            print "flowdockClient: stream() method called"
         self.CALL_BACK = stream_callback
         self.stream_pycurl()
 
@@ -98,20 +99,43 @@ class flowdock_py:
             print "request sent"
         
     def on_receive(self,  data):
-        """Handles the stdout for the stream"""
+        """
+        Handles the stdout for the stream
+
+        Processes and routes the stream responses
+        """
         js = json.loads('[' + data + ']')
         if(self.DEBUG):
             print "received..."
             print data
-            
+        
+        #users
+        try:
+            avatar = js[0][0]['avatar']
+            if isinstance(avatar, basestring):
+                for user in js[0]:
+                    self.USERS[user['id']] = user['nick']
+                print self.USERS
+        except Exception, e:
+            print e
+            pass
+
         #chat message
         try:
             data = js[0]['content']
+            user_id = int(js[0]['user'])
+            user = self.USERS.get( user_id )
+            time = strftime("%H:%M:%S", gmtime())
+            message = "%s %s: %s" % (time,user,data)
+            print "message:"
+            print message
             if isinstance(data,  basestring):
-                self.CALL_BACK( data )
-        except:
+                self.CALL_BACK( message )
+        except Exception, e:
+            print e
             pass
-            
+        
+        #error messages
         try:
             data = js[0]['message']
             self.CALL_BACK( "<p style=\"color:red\">error: " + data  + "</p>")
