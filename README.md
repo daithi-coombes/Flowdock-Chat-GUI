@@ -17,4 +17,6 @@ Create a file called 'settings.py' with the following variables:
     PASS = "Login Password"
 ```
 save and then run:
+```bash
 	python __init__.py
+```
