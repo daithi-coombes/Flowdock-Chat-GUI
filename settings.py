@@ -1,5 +1,5 @@
-DEBUG = 1
-API_TOKEN = "Api token for flow"
-USER = "Login username"    #this is the user email address (user for logging in)
-USER_NAME = "Display Name"     #the display name for the user
-PASS = "Login Password"
+API_TOKEN = "ed7cbd45fe4c646dcfbfcff447b695a6"
+USER = "webeire@gmail.com"
+USER_NAME = "Daithi"
+PASS = "chanman77"
+CALL_BACK = ""
