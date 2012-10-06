@@ -18,5 +18,5 @@ Create a file called 'settings.py' with the following variables:
 ```
 save and then run:
 ```bash
-	python __init__.py
+	$ python __init__.py
 ```
